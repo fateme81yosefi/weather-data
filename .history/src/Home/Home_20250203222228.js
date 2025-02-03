@@ -67,8 +67,7 @@ const Home = () => {
     };
 
     const saveTodayWeatherData = (data) => {
-        setDoc(doc(db, "weather", "HCTjMNIkVn72Basp6Yxh"), data);
-    };
+        setDoc(doc(db, "weather", "HCTjMNIkVn72Basp6Yxh"), data);    };
 
     const formattedTime = `${time.getHours().toString().padStart(2, '0')}:${time.getMinutes().toString().padStart(2, '0')}:${time.getSeconds().toString().padStart(2, '0')}`;
 

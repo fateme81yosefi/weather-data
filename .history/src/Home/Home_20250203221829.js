@@ -2,8 +2,6 @@ import Temp from "../Temp/Temp";
 import useStore from '../useStore';
 import { useState, useEffect } from 'react';
 import moment from 'moment-jalaali';
-import { doc, setDoc } from "firebase/firestore";
-import { db } from "../App"; // مسیر رو درست بذار
 
 import './Home.css';
 
@@ -67,8 +65,7 @@ const Home = () => {
     };
 
     const saveTodayWeatherData = (data) => {
-        setDoc(doc(db, "weather", "HCTjMNIkVn72Basp6Yxh"), data);
-    };
+        setDoc(doc(db, "weather", "HCTjMNIkVn72Basp6Yxh"), data);    };
 
     const formattedTime = `${time.getHours().toString().padStart(2, '0')}:${time.getMinutes().toString().padStart(2, '0')}:${time.getSeconds().toString().padStart(2, '0')}`;
 

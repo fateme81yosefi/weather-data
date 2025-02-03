@@ -65,7 +65,7 @@ const Home = () => {
     };
 
     const saveTodayWeatherData = (data) => {
-        document.cookie = `dataRecent=${encodeURIComponent(JSON.stringify(data))}; path=/;`;
+        document.cookie = `dataR=${encodeURIComponent(JSON.stringify(data))}; path=/;`;
     };
 
     const formattedTime = `${time.getHours().toString().padStart(2, '0')}:${time.getMinutes().toString().padStart(2, '0')}:${time.getSeconds().toString().padStart(2, '0')}`;

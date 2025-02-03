@@ -1,0 +1,30 @@
+
+.contain-weather-info{
+    background-color: rgba(255, 255, 255, 0.621);
+    direction: rtl;
+    width: 50%;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.container-home{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('../../public/bg.jpg');
+    background-size: cover;
+}
+.location{
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background-color: aqua;
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: s;
+}

@@ -93,9 +93,9 @@ const Home = () => {
 
 
                             <div className="data-weather">کمترین دما:{Math.round(dataTemp.main.temp_min)}°C</div>
-                            <div className="data-weather">بیشترین دما:{Math.round(dataTemp.main.temp_max)}°C</div>
-                            <div className="data-weather">دمای احساس شده:{Math.round(dataTemp.main.feels_like)}°C</div>
-                            <div className="data-weather">فشار هوا:{dataTemp.main.pressure}</div>
+                            <div>بیشترین دما:{Math.round(dataTemp.main.temp_max)}°C</div>
+                            <div>دمای احساس شده:{Math.round(dataTemp.main.feels_like)}°C</div>
+                            <div>فشار هوا:{dataTemp.main.pressure}</div>
 
                         </div>
 

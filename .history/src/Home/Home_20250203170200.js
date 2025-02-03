@@ -55,6 +55,7 @@ const Home = () => {
 
 
     useEffect(() => {
+        // ایجاد تایمر برای بروزرسانی ساعت هر ثانیه
         const intervalId = setInterval(() => {
             setTime(new Date());
         }, 1000);
@@ -87,15 +88,16 @@ const Home = () => {
                         <div className="contain-temp-main">
 
                             <div className="weather-status">
-                                <div>وضعیت هوا:{WeatherStatusInPersian(dataTemp.weather[0]?.main)}</div>
-                                    <img className="icon-weather" src={getWeatherImage(dataTemp.weather[0]?.main)} alt="icon weather" />
+                                <div>وضعیت هوا:{WeatherStatusInPersian(dataTemp.weather[0]?.main)}
+
+                                    <img src={getWeatherImage(dataTemp.weather[0]?.main)} /></div>
                             </div>
 
 
-                            <div className="data-weather">کمترین دما:{Math.round(dataTemp.main.temp_min)}°C</div>
-                            <div className="data-weather">بیشترین دما:{Math.round(dataTemp.main.temp_max)}°C</div>
-                            <div className="data-weather">دمای احساس شده:{Math.round(dataTemp.main.feels_like)}°C</div>
-                            <div className="data-weather">فشار هوا:{dataTemp.main.pressure}</div>
+                            <div>کمترین دما:{Math.round(dataTemp.main.temp_min)}°C</div>
+                            <div>بیشترین دما:{Math.round(dataTemp.main.temp_max)}°C</div>
+                            <div>دمای احساس شده:{Math.round(dataTemp.main.feels_like)}°C</div>
+                            <div>فشار هوا:{dataTemp.main.pressure}</div>
 
                         </div>
 

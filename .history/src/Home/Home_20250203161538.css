@@ -1,0 +1,39 @@
+
+.contain-weather-info{
+    background-color: rgba(255, 255, 255, 0.621);
+    direction: rtl;
+    width: 50%;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+.container-home{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('../../public/bg.jpg');
+    background-size: cover;
+    padding: 10px;
+
+}
+.location{
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    font-size: larger;
+    padding:0 10px;
+}
+.location-icon{
+    margin-right: 10px;
+}

@@ -50,7 +50,7 @@
 
 .contain-temp-main{
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -65,18 +65,4 @@
 .icon-weather{
     width: 60%;
     
-}
-
-.weather-status{
-    width: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid white;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-}
-.data-weather{
-    font-size: small;
 }

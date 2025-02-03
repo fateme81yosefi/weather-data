@@ -26,7 +26,7 @@
     position: relative;
     top: 0;
     right: 0;
-    width: 95%;
+    width: 100%;
     text-align: right;
     display: flex;
     flex-direction: row-reverse;
@@ -50,7 +50,7 @@
 
 .contain-temp-main{
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -60,23 +60,4 @@
 .custom-temp{
     font-size: xx-large !important;
     border-left: 1px solid white;
-}
-
-.icon-weather{
-    width: 60%;
-    
-}
-
-.weather-status{
-    width: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid white;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-}
-.data-weather{
-    font-size: small;
 }

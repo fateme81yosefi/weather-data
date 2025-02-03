@@ -33,21 +33,16 @@ const Home = () => {
         }
     }
 
-
+   
 
 
 
     return (
-        <div className="container-home">
+        <div>
             {dataTemp && dataTemp.main && Array.isArray(dataTemp.weather) && dataTemp.weather.length > 0 && (
                 <div className="contain-weather-info">
 
-                    <div className="location">
-                        <div>{dataLocation.city},{dataLocation.country}</div>
-
-
-                    </div>
-
+                    <div> شهر: {da}</div>
                     <div>دمای هوا:{Math.round(dataTemp.main.temp)}°C</div>
                     <div>کمترین دما:{Math.round(dataTemp.main.temp_min)}°C</div>
                     <div>بیشترین دما:{Math.round(dataTemp.main.temp_max)}°C</div>

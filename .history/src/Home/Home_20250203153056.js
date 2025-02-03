@@ -43,9 +43,7 @@ const Home = () => {
                 <div className="contain-weather-info">
 
                     <div className="location">
-                        <div>{dataLocation.city},{dataLocation.country}</div>
-
-
+                        <div>{dataLocation.city},{dataLocation.country}</div> <i className="fas fa-location-arrow" style={{ fontSize: '24px', color: 'blue' }}></i>
                     </div>
 
                     <div>دمای هوا:{Math.round(dataTemp.main.temp)}°C</div>

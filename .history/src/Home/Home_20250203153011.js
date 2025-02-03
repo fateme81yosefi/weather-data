@@ -44,8 +44,6 @@ const Home = () => {
 
                     <div className="location">
                         <div>{dataLocation.city},{dataLocation.country}</div>
-
-
                     </div>
 
                     <div>دمای هوا:{Math.round(dataTemp.main.temp)}°C</div>

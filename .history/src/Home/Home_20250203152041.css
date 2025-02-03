@@ -1,0 +1,15 @@
+.contain-weather-info{
+    background-color: aquamarine;
+    direction: rtl;
+    width: 50%;
+}
+
+.container-home{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('../../public/bg.jpg');
+    ba
+}

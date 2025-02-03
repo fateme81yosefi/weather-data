@@ -1,4 +1,16 @@
+@font-face {
+    font-family: Vazir;
+    src: url("Vazir-Regular.eot");
+    src: url("Vazir-Regular.eot?#iefix") format("embedded-opentype"),
+      url("Vazir-Regular.woff2") format("woff2"),
+      url("Vazir-Regular.woff") format("woff"),
+      url("Vazir-Regular.ttf") format("truetype");
+  }
+  body {
+    font-family: vazir;
+    font-weight: bold;
 
+  }
 .contain-weather-info{
     background-color: rgba(255, 255, 255, 0.621);
     direction: rtl;
@@ -15,16 +27,4 @@
     height: 100vh;
     background-image: url('../../public/bg.jpg');
     background-size: cover;
-}
-.location{
-    position: relative;
-    top: 0;
-    right: 0;
-    width: 100%;
-    background-color: aqua;
-    text-align: right;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
 }

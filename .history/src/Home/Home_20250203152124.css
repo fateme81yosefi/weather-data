@@ -1,0 +1,16 @@
+.contain-weather-info{
+    background-color: rgb(255, 255, 255);
+    direction: rtl;
+    width: 50%;
+    border: 1px solid white;
+}
+
+.container-home{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('../../public/bg.jpg');
+    background-size: cover;
+}

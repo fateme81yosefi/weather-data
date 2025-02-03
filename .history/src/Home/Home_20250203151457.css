@@ -1,0 +1,10 @@
+.contain-weather-info{
+    background-color: aquamarine;
+    direction: rtl;
+    width: 50%;
+}
+
+.container-home{
+    display: flex;
+    flex-direction: ;
+}

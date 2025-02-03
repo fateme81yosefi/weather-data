@@ -106,9 +106,7 @@
 .contain-btn{
   width: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: ;
 }
 @media (max-width: 1250px) {
   .contain-weather-info {

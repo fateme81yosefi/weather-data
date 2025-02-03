@@ -32,7 +32,7 @@ const Home = () => {
 
     const getWeatherImage = (condition) => {
         switch (condition) {
-            case 'Clear': return 'https://cdn2.iconfinder.com/data/icons/weather-682/1024/sun_sunny-512.png';
+            case 'Clear': return 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX3SHyAzNnWZL-neNvrAaM54_NgKOTCpee_C7Ng1FY8nYcxSsdHlUrpLXsX9vrOuSQmnc&usqp=CAU';
             case 'Clouds': return 'https://cdn-icons-png.flaticon.com/512/1163/1163634.png';
             case 'Rain':
             case 'Drizzle': return 'https://cdn-icons-png.flaticon.com/512/1163/1163657.png';
@@ -124,14 +124,14 @@ const Home = () => {
                             </div>
                         ))}
                     </div>
-                    <div className="contain-btn">
-                        {hasTomorrowData && (
-                            <button className="tomorrow" onClick={handleTomorrowClick}>فردا</button>
-                        )}
+                    <div className="">
+                    {hasTomorrowData && (
+                        <button className="tomorrow" onClick={handleTomorrowClick}>فردا</button>
+                    )}
 
-                        {hasYesterdayData && (
-                            <button className="tomorrow" onClick={handleYesterdayClick}>دیروز</button>
-                        )}
+                    {hasYesterdayData && (
+                        <button className="tomorrow" onClick={handleYesterdayClick}>دیروز</button>
+                    )}
                     </div>
 
                 </div>

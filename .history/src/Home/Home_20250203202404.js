@@ -8,9 +8,6 @@ const Home = () => {
     const [time, setTime] = useState(new Date());
     const [filtered, setFilter] = useState([]);
     const [selectedDate, setSelectedDate] = useState(new Date());
-    const [hasTomorrowData, setHasTomorrowData] = useState(true);
-    const [hasYesterdayData, setHasYesterdayData] = useState(true);
-
 
     Temp();
 
@@ -32,7 +29,7 @@ const Home = () => {
 
     const getWeatherImage = (condition) => {
         switch (condition) {
-            case 'Clear': return 'https://cdn2.iconfinder.com/data/icons/weather-682/1024/sun_sunny-512.png';
+            case 'Clear': return 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX3SHyAzNnWZL-neNvrAaM54_NgKOTCpee_C7Ng1FY8nYcxSsdHlUrpLXsX9vrOuSQmnc&usqp=CAU';
             case 'Clouds': return 'https://cdn-icons-png.flaticon.com/512/1163/1163634.png';
             case 'Rain':
             case 'Drizzle': return 'https://cdn-icons-png.flaticon.com/512/1163/1163657.png';
@@ -48,13 +45,13 @@ const Home = () => {
 
     const handleTomorrowClick = () => {
         const tomorrow = new Date(selectedDate);
-        tomorrow.setDate(tomorrow.getDate() + 1);
+        tomorrow.setDate(tomorrow.getDate() + 1);غییر تاریخ به فردا
         setSelectedDate(tomorrow);
     };
 
     const handleYesterdayClick = () => {
         const tomorrow = new Date(selectedDate);
-        tomorrow.setDate(tomorrow.getDate() - 1);
+        tomorrow.setDate(tomorrow.getDate() - 1); // تغییر تاریخ به فردا
         setSelectedDate(tomorrow);
     };
 
@@ -66,23 +63,9 @@ const Home = () => {
         return () => clearInterval(intervalId);
     }, []);
 
-
     useEffect(() => {
-        const selectedDateStr = selectedDate.toISOString().split('T')[0];
-        setFilter(dataTemp.filter(item => item.dt_txt.split(' ')[0] === selectedDateStr));
-
-        const tomorrow = new Date(selectedDate);
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        const tomorrowStr = tomorrow.toISOString().split('T')[0];
-        const tomorrowExists = dataTemp.some(item => item.dt_txt.split(' ')[0] === tomorrowStr);
-        setHasTomorrowData(tomorrowExists);
-
-        const yesterday = new Date(selectedDate);
-        yesterday.setDate(yesterday.getDate() - 1);
-        const yesterdayStr = yesterday.toISOString().split('T')[0];
-        const yesterdayExists = dataTemp.some(item => item.dt_txt.split(' ')[0] === yesterdayStr);
-        setHasYesterdayData(yesterdayExists);
-
+        const selectedDateStr = selectedDate.toISOString().split('T')[0]; 
+        setFilter(dataTemp.filter(item => item.dt_txt.split(' ')[0] === selectedDateStr)); 
     }, [selectedDate, dataTemp]);
 
     const formattedTime = `${time.getHours().toString().padStart(2, '0')}:${time.getMinutes().toString().padStart(2, '0')}:${time.getSeconds().toString().padStart(2, '0')}`;
@@ -100,39 +83,33 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="scrollable">
-                        {filtered.map((item, index) => (
-                            <div className="contain-detail" key={index}>
-                                <div className="time-weather">
-                                    <h4>{item.dt_txt.split(' ')[1]}</h4>
-                                </div>
-
-                                <div className="contain-temp-main custom-temp">
-                                    <h1>{Math.round(item.main.temp)}°C</h1>
-                                </div>
-
-                                <div className="contain-temp-main">
-                                    <div className="weather-status">
-                                        <div>وضعیت هوا: {WeatherStatusInPersian(item.weather[0]?.main)}</div>
-                                        <img className="icon-weather" src={getWeatherImage(item.weather[0]?.main)} alt="icon weather" />
-                                    </div>
-                                    <div className="data-weather">کمترین دما: {Math.round(item.main.temp_min)}</div>
-                                    <div className="data-weather">بیشترین دما: {Math.round(item.main.temp_max)}</div>
-                                    <div className="data-weather">دمای احساس شده: {Math.round(item.main.feels_like)}</div>
-                                    <div className="data-weather">فشار هوا: {item.main.pressure}</div>
-                                </div>
+                   <div className="scrollable">
+                   {filtered.map((item, index) => (
+                        <div className="contain-detail" key={index}>
+                            <div className="time-weather">
+                                <h4>{item.dt_txt.split(' ')[1]}</h4>
                             </div>
-                        ))}
-                    </div>
-                    <div className="contain-btn">
-                        {hasTomorrowData && (
-                            <button className="tomorrow" onClick={handleTomorrowClick}>فردا</button>
-                        )}
 
-                        {hasYesterdayData && (
-                            <button className="tomorrow" onClick={handleYesterdayClick}>دیروز</button>
-                        )}
-                    </div>
+                            <div className="contain-temp-main custom-temp">
+                                <h1>{Math.round(item.main.temp)}°C</h1>
+                            </div>
+
+                            <div className="contain-temp-main">
+                                <div className="weather-status">
+                                    <div>وضعیت هوا: {WeatherStatusInPersian(item.weather[0]?.main)}</div>
+                                    <img className="icon-weather" src={getWeatherImage(item.weather[0]?.main)} alt="icon weather" />
+                                </div>
+                                <div className="data-weather">کمترین دما: {Math.round(item.main.temp_min)}</div>
+                                <div className="data-weather">بیشترین دما: {Math.round(item.main.temp_max)}</div>
+                                <div className="data-weather">دمای احساس شده: {Math.round(item.main.feels_like)}</div>
+                                <div className="data-weather">فشار هوا: {item.main.pressure}</div>
+                            </div>
+                        </div>
+                    ))}
+                   </div>
+
+                    <button className="tomorrow" onClick={handleTomorrowClick}>فردا</button>
+                    <button className="tomorrow" onClick={handleTomorrowClick}>دیروز</button>
 
                 </div>
             )}

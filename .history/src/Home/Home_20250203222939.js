@@ -68,7 +68,7 @@ const Home = () => {
 
     const saveTodayWeatherData = (data) => {
         setDoc(doc(db, "weather", "HCTjMNIkVn72Basp6Yxh"), data)
-            .then(() => console.log("done"))
+            .then(() => console.log("✅ اطلاعات ذخیره شد!"))
             .catch((error) => console.error("error", error));
     };
     

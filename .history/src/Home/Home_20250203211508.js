@@ -13,6 +13,7 @@ const Home = () => {
     const [hasTomorrowData, setHasTomorrowData] = useState(true);
     const [hasYesterdayData, setHasYesterdayData] = useState(true);
 
+
     Temp();
 
     const WeatherStatusInPersian = (status) => {

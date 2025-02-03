@@ -13,6 +13,7 @@ const Home = () => {
     const [hasTomorrowData, setHasTomorrowData] = useState(true);
     const [hasYesterdayData, setHasYesterdayData] = useState(true);
 
+
     Temp();
 
     const WeatherStatusInPersian = (status) => {
@@ -118,8 +119,7 @@ const Home = () => {
                         <div className="">
                             <h2>{formattedTime}</h2>
                         </div>
-                        <div>
-                            {convertToPersianDate(selectedDate)}
+                        <div>                            {convertToPersianDate(selectedDate)}
                         </div>
                     </div>
 

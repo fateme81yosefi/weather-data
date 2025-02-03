@@ -13,6 +13,7 @@ const Home = () => {
     const [hasTomorrowData, setHasTomorrowData] = useState(true);
     const [hasYesterdayData, setHasYesterdayData] = useState(true);
 
+
     Temp();
 
     const WeatherStatusInPersian = (status) => {
@@ -68,8 +69,6 @@ const Home = () => {
         localStorage.setItem('todayWeather', JSON.stringify(data));
     };
 
-    const formattedTime = `${time.getHours().toString().padStart(2, '0')}:${time.getMinutes().toString().padStart(2, '0')}:${time.getSeconds().toString().padStart(2, '0')}`;
-
     useEffect(() => {
 
         const intervalId = setInterval(() => {
@@ -87,6 +86,7 @@ const Home = () => {
 
         saveTodayWeatherData(todayData);
     }, [dataTemp]);
+
 
     useEffect(() => {
         const selectedDateStr = selectedDate.toISOString().split('T')[0];
@@ -118,8 +118,7 @@ const Home = () => {
                         <div className="">
                             <h2>{formattedTime}</h2>
                         </div>
-                        <div>
-                            {convertToPersianDate(selectedDate)}
+                        <div>                            {convertToPersianDate(selectedDate)}
                         </div>
                     </div>
 

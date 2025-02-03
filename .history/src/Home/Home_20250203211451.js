@@ -13,6 +13,7 @@ const Home = () => {
     const [hasTomorrowData, setHasTomorrowData] = useState(true);
     const [hasYesterdayData, setHasYesterdayData] = useState(true);
 
+
     Temp();
 
     const WeatherStatusInPersian = (status) => {
@@ -88,6 +89,7 @@ const Home = () => {
         saveTodayWeatherData(todayData);
     }, [dataTemp]);
 
+
     useEffect(() => {
         const selectedDateStr = selectedDate.toISOString().split('T')[0];
         setFilter(dataTemp.filter(item => item.dt_txt.split(' ')[0] === selectedDateStr));
@@ -118,8 +120,7 @@ const Home = () => {
                         <div className="">
                             <h2>{formattedTime}</h2>
                         </div>
-                        <div>
-                            {convertToPersianDate(selectedDate)}
+                        <div>                            {convertToPersianDate(selectedDate)}
                         </div>
                     </div>
 

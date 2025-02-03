@@ -13,6 +13,7 @@ const Home = () => {
     const [hasTomorrowData, setHasTomorrowData] = useState(true);
     const [hasYesterdayData, setHasYesterdayData] = useState(true);
 
+
     Temp();
 
     const WeatherStatusInPersian = (status) => {
@@ -68,25 +69,17 @@ const Home = () => {
         localStorage.setItem('todayWeather', JSON.stringify(data));
     };
 
-    const formattedTime = `${time.getHours().toString().padStart(2, '0')}:${time.getMinutes().toString().padStart(2, '0')}:${time.getSeconds().toString().padStart(2, '0')}`;
-
     useEffect(() => {
 
+        saveTodayWeatherData(dataTemp.filter(item => item.dt_txt.split(' ')[0] === new Date()))
         const intervalId = setInterval(() => {
             setTime(new Date());
         }, 1000);
         return () => clearInterval(intervalId);
     }, []);
 
-    useEffect(() => {
-        const todayStr = new Date().toISOString().split('T')[0];
+    use
 
-        const todayData = dataTemp.filter(item => item.dt_txt.split(' ')[0] === todayStr);
-
-        console.log(todayData)
-
-        saveTodayWeatherData(todayData);
-    }, [dataTemp]);
 
     useEffect(() => {
         const selectedDateStr = selectedDate.toISOString().split('T')[0];
@@ -106,6 +99,7 @@ const Home = () => {
 
     }, [selectedDate, dataTemp]);
 
+    const formattedTime = `${time.getHours().toString().padStart(2, '0')}:${time.getMinutes().toString().padStart(2, '0')}:${time.getSeconds().toString().padStart(2, '0')}`;
 
     return (
         <div className="container-home">
@@ -118,8 +112,7 @@ const Home = () => {
                         <div className="">
                             <h2>{formattedTime}</h2>
                         </div>
-                        <div>
-                            {convertToPersianDate(selectedDate)}
+                        <div>                            {convertToPersianDate(selectedDate)}
                         </div>
                     </div>
 

@@ -60,11 +60,6 @@ const Home = () => {
         setSelectedDate(tomorrow);
     };
 
-    const convertToPersianDate = (englishDate) => {
-        const persianDate = moment(englishDate).format('jYYYY/jMM/jDD'); 
-        return persianDate;
-    };
-
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -104,8 +99,6 @@ const Home = () => {
                         </div>
                         <div className="">
                             <h2>{formattedTime}</h2>
-                        </div>
-                        <div>                            {convertToPersianDate(selectedDate)}
                         </div>
                     </div>
 

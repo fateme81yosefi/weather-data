@@ -105,8 +105,6 @@ const Home = () => {
                         <div className="">
                             <h2>{formattedTime}</h2>
                         </div>
-                        <div>                            {convertToPersianDate(selectedDate)}
-                        </div>
                     </div>
 
                     <div className="scrollable">

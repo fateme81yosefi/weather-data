@@ -104,8 +104,7 @@ const Home = () => {
                         </div>
                         <div className="">
                             <h2>{formattedTime}</h2>
-                        </div>
-                        <div>                            {convertToPersianDate(selectedDate)}
+                            {convertToPersianDate(date)}
                         </div>
                     </div>
 

@@ -1,6 +1,6 @@
 import Temp from "../Temp/Temp";
 import useStore from '../useStore';
-import './Home.css'
+
 const Home = () => {
 
     const { dataLocation, dataTemp } = useStore();
@@ -40,11 +40,11 @@ const Home = () => {
     return (
         <div>
             {dataTemp && dataTemp.main && Array.isArray(dataTemp.weather) && dataTemp.weather.length > 0 && (
-                <div className="contain-weather-info">
-                    <div>دمای هوا:{Math.round(dataTemp.main.temp)}°C</div>
-                    <div>کمترین دما:{Math.round(dataTemp.main.temp_min)}°C</div>
-                    <div>بیشترین دما:{Math.round(dataTemp.main.temp_max)}°C</div>
-                    <div>دمای احساس شده:{Math.round(dataTemp.main.feels_like)}°C</div>
+                <div>
+                    <div>دمای هوا:{(dataTemp.main.temp)}°C</div>
+                    <div>کمترین دما:{convertTempToCelsiuos(dataTemp.main.temp_min)}°C</div>
+                    <div>بیشترین دما:{convertTempToCelsiuos(dataTemp.main.temp_max)}°C</div>
+                    <div>دمای احساس شده:{convertTempToCelsiuos(dataTemp.main.feels_like)}°C</div>
                     <div>فشار هوا:{dataTemp.main.pressure}</div>
                     <div>وضعیت هوا:{WeatherStatusInPersian(dataTemp.weather[0]?.main)}</div>
                 </div>

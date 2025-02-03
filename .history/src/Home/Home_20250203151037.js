@@ -1,6 +1,6 @@
 import Temp from "../Temp/Temp";
 import useStore from '../useStore';
-import './Home.css'
+
 const Home = () => {
 
     const { dataLocation, dataTemp } = useStore();

@@ -41,7 +41,7 @@ const Home = () => {
         <div>
             {dataTemp && dataTemp.main && Array.isArray(dataTemp.weather) && dataTemp.weather.length > 0 && (
                 <div className="contain-weather-info">
-                    <div>دمای هوا:{Math.round(dataTemp.main.temp)}°C</div>
+                    <div>دمای هوا:°C{Math.round(dataTemp.main.temp)}</div>
                     <div>کمترین دما:{Math.round(dataTemp.main.temp_min)}°C</div>
                     <div>بیشترین دما:{Math.round(dataTemp.main.temp_max)}°C</div>
                     <div>دمای احساس شده:{Math.round(dataTemp.main.feels_like)}°C</div>

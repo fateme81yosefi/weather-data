@@ -1,6 +1,6 @@
 import Temp from "../Temp/Temp";
 import useStore from '../useStore';
-import './Home.css'
+
 const Home = () => {
 
     const { dataLocation, dataTemp } = useStore();
@@ -40,7 +40,7 @@ const Home = () => {
     return (
         <div>
             {dataTemp && dataTemp.main && Array.isArray(dataTemp.weather) && dataTemp.weather.length > 0 && (
-                <div className="contain-weather-info">
+                <div className="contain">
                     <div>دمای هوا:{Math.round(dataTemp.main.temp)}°C</div>
                     <div>کمترین دما:{Math.round(dataTemp.main.temp_min)}°C</div>
                     <div>بیشترین دما:{Math.round(dataTemp.main.temp_max)}°C</div>
